@@ -1,0 +1,5 @@
+{
+  "$id": "reason.code.list.json",
+  "description": "Reason Codes",
+  "enum": ["01", "02", "03"]
+}

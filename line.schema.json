@@ -1,0 +1,25 @@
+{
+  "$id": "line.schema.json",
+  "title": "Line",
+  "description": "Line Item Schema",
+  "type": "object",
+  "properties": {
+    "lineNo": {
+      "type": "integer",
+      "description": "Line Number"
+    },
+    "lineData": {
+      "description": "Line Data",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": true
+    },
+    "actionCode": {
+      "enum": ["A", "C", "D"]
+    },
+    "lineReasonCode": {
+      "$ref": "reason.code.list.json"
+    }
+  },
+  "required": ["lineNo", "lineData"]
+}

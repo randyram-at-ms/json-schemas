@@ -1,0 +1,39 @@
+{
+  "$id": "hdrlineitem.schema.json",
+  "title": "HeaderLineItem",
+  "description": "Schema for conformance to header line item",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "hdr": {
+          "description": "Header Attributes",
+          "type": "object",
+          "properties": {
+            "hdrReasonCode": {
+              "$ref": "reason.code.list.json"
+            }
+          },
+          "additionalProperties": true
+        },
+        "lines": {
+          "description": "Line Attributes",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "line.schema.json"
+          }
+        }
+      },
+      "anyOf": [
+        { "required": ["hdr"] },
+        { "required": ["lines"] },
+        { "required": ["hdr", "lines"] }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["data"],
+  "additionalProperties": false
+}
